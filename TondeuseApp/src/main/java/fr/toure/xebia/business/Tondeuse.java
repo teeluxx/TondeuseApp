@@ -1,6 +1,11 @@
-package fr.toure.xebia.model;
+package fr.toure.xebia.business;
 
+import org.springframework.stereotype.Service;
 
+import fr.toure.xebia.model.Position;
+import fr.toure.xebia.model.Surface;
+
+@Service
 public class Tondeuse extends Appareil{
 
 	@Override

@@ -1,5 +1,8 @@
 package fr.toure.xebia.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Surface {
 	private Position maxCoordonnees;
 

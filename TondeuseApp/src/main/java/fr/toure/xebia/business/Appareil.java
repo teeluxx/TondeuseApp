@@ -1,12 +1,16 @@
-package fr.toure.xebia.model;
+package fr.toure.xebia.business;
 
-import org.springframework.stereotype.Component;
+import fr.toure.xebia.model.Orientation;
+import fr.toure.xebia.model.Pivotement;
+import fr.toure.xebia.model.Position;
+import fr.toure.xebia.model.Surface;
 
-@Component
 public abstract class Appareil {
 	
 	private Position positionCourante;
 	private Orientation orientation;
+	
+	public abstract void avancer(Surface surface);
 
 	public void tourner(Pivotement pivotement){
 		switch (pivotement) {
@@ -60,13 +64,17 @@ public abstract class Appareil {
 	}
 
 	public boolean positionSuivanteCorrecte(Surface surface, int x, int y){
-		if(x <= surface.getAbscisse() && y <= surface.getOrdonnee() && x>= 0 && y >= 0){
+		if(x < surface.getAbscisse() && y < surface.getOrdonnee() && x >= 0 && y >= 0){
 			return true;
 		}
 		return false;
 	}
-
-	public abstract void avancer(Surface surface);
+	
+	@Override
+	public String toString() {
+		String etat = "Position => ";
+		return etat + getCurrentPosition();
+	}
 
 	public Position getCurrentPosition() {
 		return positionCourante;

@@ -4,13 +4,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Surface {
-	private Position maxCoordonnees;
+	private Coordonnees maxCoordonnees;
 
-	public Position getMaxCoordonnees() {
+	public Coordonnees getMaxCoordonnees() {
 		return maxCoordonnees;
 	}
 
-	public void setMaxCoordonnees(Position maxCoordonnees) {
+	public void setMaxCoordonnees(Coordonnees maxCoordonnees) {
 		this.maxCoordonnees = maxCoordonnees;
 	}
 	

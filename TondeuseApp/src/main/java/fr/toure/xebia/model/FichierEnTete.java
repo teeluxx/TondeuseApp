@@ -1,21 +1,18 @@
 package fr.toure.xebia.model;
 
 public class FichierEnTete {
-	private int x;
-	private int y;
+	private Coordonnees coordonneesMax;
 	
-	public int getX() {
-		return x;
+	public FichierEnTete(Coordonnees coordonneesMax) {
+		this.coordonneesMax = coordonneesMax;
 	}
-	public void setX(int x) {
-		this.x = x;
+
+	public Coordonnees getCoordonneesMax() {
+		return coordonneesMax;
 	}
-	public int getY() {
-		return y;
+
+	public void setCoordonneesMax(Coordonnees coordonneesMax) {
+		this.coordonneesMax = coordonneesMax;
 	}
-	public void setY(int y) {
-		this.y = y;
-	}
-	
 	
 }

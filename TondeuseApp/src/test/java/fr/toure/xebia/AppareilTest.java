@@ -10,8 +10,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import fr.toure.xebia.business.Appareil;
 import fr.toure.xebia.model.Orientation;
-import fr.toure.xebia.model.Pivotement;
-import fr.toure.xebia.model.Position;
+import fr.toure.xebia.model.Mouvement;
+import fr.toure.xebia.model.Coordonnees;
 import fr.toure.xebia.model.Surface;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -27,19 +27,19 @@ public class AppareilTest {
 	@Before
 	public void init(){
 		//Appareil
-		Position tonsdeusePositionInitiale = new Position(1, 0);
+		Coordonnees tonsdeusePositionInitiale = new Coordonnees(1, 0);
 		tondeuse.setOrientation(Orientation.NORTH);
 		tondeuse.setCurrentPosition(tonsdeusePositionInitiale);
 		
 		//Surface
-		Position taille = new Position(6, 2);
+		Coordonnees taille = new Coordonnees(6, 2);
 		surface.setMaxCoordonnees(taille);
 	}
 	
 	@Test
 	public void tournerAGaucheTest(){
 		// Action
-		tondeuse.tourner(Pivotement.GAUCHE);
+		tondeuse.tourner(Mouvement.GAUCHE);
 
 		//Assertion
 		assertEquals(Orientation.WEST, tondeuse.getOrientation());
@@ -48,7 +48,7 @@ public class AppareilTest {
 	@Test
 	public void tournerADroiteTest(){
 		// Action
-		tondeuse.tourner(Pivotement.DROITE);
+		tondeuse.tourner(Mouvement.DROITE);
 
 		//Assertion
 		assertEquals(Orientation.EAST, tondeuse.getOrientation());
@@ -57,10 +57,10 @@ public class AppareilTest {
 	@Test
 	public void tournerPlusieursFoisTest(){
 		// Action
-		tondeuse.tourner(Pivotement.GAUCHE);
-		tondeuse.tourner(Pivotement.GAUCHE);
-		tondeuse.tourner(Pivotement.GAUCHE);
-		tondeuse.tourner(Pivotement.DROITE);
+		tondeuse.tourner(Mouvement.GAUCHE);
+		tondeuse.tourner(Mouvement.GAUCHE);
+		tondeuse.tourner(Mouvement.GAUCHE);
+		tondeuse.tourner(Mouvement.DROITE);
 
 		//Assertion
 		assertEquals(Orientation.SOUTH, tondeuse.getOrientation());

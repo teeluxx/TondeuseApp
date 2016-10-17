@@ -1,10 +1,10 @@
 package fr.toure.xebia.model;
 
-public class Position {
+public class Coordonnees {
 	private int x;
 	private int y;
 	
-	public Position(int x, int y){
+	public Coordonnees(int x, int y){
 		this.x = x;
 		this.y = y;
 	}

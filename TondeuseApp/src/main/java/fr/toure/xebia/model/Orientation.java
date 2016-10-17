@@ -1,20 +1,22 @@
 package fr.toure.xebia.model;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public enum Orientation {
-	NORTH('N'),
-	SOUTH('S'),
-	EAST('E'),
-	WEST('W');
+	NORTH, SOUTH, EAST, WEST;
+
+	private static final Map<String,Orientation> map = new LinkedHashMap<String,Orientation>(); 
 	
-	private final char orientation;
+	static {
+			map.put("N", NORTH);
+			map.put("S", SOUTH);
+			map.put("E", EAST);
+			map.put("W", WEST);
+	}
 	
-	private Orientation(char orientation){
-		this.orientation = orientation;
+	public static Orientation getOrientation(String key){
+		return map.get(key);
 	}
 
-	public char getOrientation() {
-		return orientation;
-	}
-	
-	
 }

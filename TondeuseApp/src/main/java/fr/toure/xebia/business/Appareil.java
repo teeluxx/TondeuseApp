@@ -1,18 +1,18 @@
 package fr.toure.xebia.business;
 
 import fr.toure.xebia.model.Orientation;
-import fr.toure.xebia.model.Pivotement;
-import fr.toure.xebia.model.Position;
+import fr.toure.xebia.model.Mouvement;
+import fr.toure.xebia.model.Coordonnees;
 import fr.toure.xebia.model.Surface;
 
 public abstract class Appareil {
 	
-	private Position positionCourante;
+	private Coordonnees positionCourante;
 	private Orientation orientation;
 	
 	public abstract void avancer(Surface surface);
 
-	public void tourner(Pivotement pivotement){
+	public void tourner(Mouvement pivotement){
 		switch (pivotement) {
 		case DROITE:
 			tournerADroite();
@@ -76,10 +76,10 @@ public abstract class Appareil {
 		return etat + getCurrentPosition();
 	}
 
-	public Position getCurrentPosition() {
+	public Coordonnees getCurrentPosition() {
 		return positionCourante;
 	}
-	public void setCurrentPosition(Position currentPosition) {
+	public void setCurrentPosition(Coordonnees currentPosition) {
 		this.positionCourante = currentPosition;
 	}
 	public Orientation getOrientation() {

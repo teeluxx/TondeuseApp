@@ -5,6 +5,13 @@ public class FichierAppareilPosition {
 	private int ordonnee;
 	private Orientation orientation;
 	
+	
+	public FichierAppareilPosition(int abscisse, int ordonnee, Orientation orientation) {
+		this.abscisse = abscisse;
+		this.ordonnee = ordonnee;
+		this.orientation = orientation;
+	}
+	
 	public int getAbscisse() {
 		return abscisse;
 	}

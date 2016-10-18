@@ -1,4 +1,4 @@
-package fr.toure.xebia.model;
+package fr.toure.xebia.model.commun;
 
 public class Coordonnees {
 	private int x;
@@ -7,11 +7,6 @@ public class Coordonnees {
 	public Coordonnees(int x, int y){
 		this.x = x;
 		this.y = y;
-	}
-	
-	@Override
-	public String toString() {
-		return "X - Y : " + this.x + " " + this.y;
 	}
 	
 	public int getX() {
@@ -30,4 +25,8 @@ public class Coordonnees {
 		this.y = y;
 	}
 	
+	@Override
+	public String toString() {
+		return "X - Y : " + this.x + " " + this.y;
+	}
 }

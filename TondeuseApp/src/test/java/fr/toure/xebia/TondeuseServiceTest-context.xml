@@ -7,6 +7,5 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 
-	<bean id="tondeuse" class="fr.toure.xebia.business.Tondeuse"/>
-	<bean id="surface" class="fr.toure.xebia.model.Surface"/>
+	<bean id="tondeuseService" class="fr.toure.xebia.service.TondeuseService"/>
 </beans>

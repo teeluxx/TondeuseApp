@@ -25,6 +25,7 @@ public class LecteurFichierAppareilService {
 	
 	private final static Charset ENCODING = StandardCharsets.UTF_8;
 	
+	@Autowired
 	private FichierAppareil fichier;
 
 	public IFichier lire(String nomFichier){

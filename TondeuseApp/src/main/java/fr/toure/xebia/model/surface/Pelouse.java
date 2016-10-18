@@ -8,6 +8,10 @@ import fr.toure.xebia.model.commun.Coordonnees;
 public class Pelouse implements ISurface{
 	private Coordonnees taille;
 	
+	public Pelouse(){
+		super();
+	}
+	
 	public Pelouse(Coordonnees taille) {
 		super();
 		this.taille = taille;

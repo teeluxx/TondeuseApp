@@ -9,7 +9,7 @@ import fr.toure.xebia.service.fichier.LecteurFichierAppareilService;
 public class Engine {
 
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("../ressources/spring.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		LecteurFichierAppareilService lecteurFichierAppareilService = (LecteurFichierAppareilService) context.getBean("lecteurFichierAppareilService");
 		lecteurFichierAppareilService.lire(args[0]);
 	}

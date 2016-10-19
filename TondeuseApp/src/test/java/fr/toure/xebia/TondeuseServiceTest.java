@@ -14,7 +14,7 @@ import fr.toure.xebia.model.commun.Mouvement;
 import fr.toure.xebia.model.commun.Orientation;
 import fr.toure.xebia.model.surface.ISurface;
 import fr.toure.xebia.model.surface.Pelouse;
-import fr.toure.xebia.service.AbstractAppareilSevice;
+import fr.toure.xebia.service.appareil.AbstractAppareilSevice;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration

@@ -29,4 +29,12 @@ public class Coordonnees {
 	public String toString() {
 		return "X - Y : " + this.x + " " + this.y;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Coordonnees coordonnees = (Coordonnees) obj;
+		if(this.x == coordonnees.getX() && this.y == coordonnees.getY())
+			return true;
+		return false;
+	}
 }

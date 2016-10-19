@@ -62,7 +62,7 @@ public class LecteurFichierAppareilService {
 		return fichier;
 	}
 
-	private Coordonnees getEnTete(String ligne){
+	public Coordonnees getEnTete(String ligne){
 		Scanner scanner = new Scanner(ligne);
 		scanner.useDelimiter(" ");
 
@@ -72,7 +72,7 @@ public class LecteurFichierAppareilService {
 		return new Coordonnees(abscisse, ordonnee);
 	}
 
-	private IAppareil getAppareil(String ligne){
+	public IAppareil getAppareil(String ligne){
 		Scanner scanner = new Scanner(ligne);
 		scanner.useDelimiter(" ");
 		
@@ -85,7 +85,7 @@ public class LecteurFichierAppareilService {
 		return new Tondeuse(coordonnees, orientation);
 	}
 
-	private String getInstructions(String ligne){
+	public String getInstructions(String ligne){
 		return ligne; 
 	}
 }

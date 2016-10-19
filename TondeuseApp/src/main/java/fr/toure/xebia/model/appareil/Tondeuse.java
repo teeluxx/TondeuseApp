@@ -38,4 +38,11 @@ public class Tondeuse implements IAppareil{
 		return "X : " + getAbscisse() + ", " + "Y : " +getOrdonnee();
 	}
 
+	public boolean equals(Object obj){
+		Tondeuse tondeuse = (Tondeuse) obj;
+		if(this.getOrdonnee() == tondeuse.getOrdonnee() && this.getAbscisse() == tondeuse.getAbscisse()
+				&& this.getOrientation().equals(tondeuse.getOrientation()))
+			return true;
+		return false;
+	}
 }

@@ -8,7 +8,6 @@ import fr.toure.xebia.model.commun.Coordonnees;
 import fr.toure.xebia.model.commun.Mouvement;
 import fr.toure.xebia.model.commun.Orientation;
 import fr.toure.xebia.model.surface.ISurface;
-import fr.toure.xebia.service.AbstractAppareilSevice;
 
 @Service
 public class TondeuseService extends AbstractAppareilSevice{

@@ -1,4 +1,4 @@
-package fr.toure.xebia.service;
+package fr.toure.xebia.service.appareil;
 
 import fr.toure.xebia.model.appareil.IAppareil;
 import fr.toure.xebia.model.commun.Coordonnees;

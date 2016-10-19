@@ -24,11 +24,10 @@ import fr.toure.xebia.model.surface.ISurface;
 public class LecteurFichierAppareilService {
 	
 	private final static Charset ENCODING = StandardCharsets.UTF_8;
-	
-	@Autowired
-	private FichierAppareil fichier;
 
 	public IFichier lire(String nomFichier){
+		IFichier fichier = new FichierAppareil();
+		
 		Path fichierChemin = Paths.get(nomFichier);
 		
 		try (Scanner scanner =  new Scanner(fichierChemin, ENCODING.name())){
@@ -86,6 +85,6 @@ public class LecteurFichierAppareilService {
 	}
 
 	public String getInstructions(String ligne){
-		return ligne; 
+		return ligne;
 	}
 }

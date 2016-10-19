@@ -1,8 +1,17 @@
 package fr.toure.xebia.model.commun;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
 public class Coordonnees {
 	private int x;
 	private int y;
+	
+	public Coordonnees(){
+		super();
+	}
 	
 	public Coordonnees(int x, int y){
 		this.x = x;

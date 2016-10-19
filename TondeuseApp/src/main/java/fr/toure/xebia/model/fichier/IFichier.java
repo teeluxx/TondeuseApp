@@ -9,4 +9,8 @@ public interface IFichier {
 	public Coordonnees getEnTete();
 	
 	public Map<IAppareil, String> getAppareilsInstructions();
+	
+	public void setEnTete(Coordonnees enTete);
+	
+	public void setAppareilsInstructions(Map<IAppareil, String> appareilsInstructions);
 }

@@ -1,5 +1,6 @@
 package fr.toure.xebia.service.appareil;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.toure.xebia.model.appareil.IAppareil;
@@ -12,8 +13,16 @@ import fr.toure.xebia.model.surface.ISurface;
 @Service
 public class TondeuseService extends AbstractAppareilSevice{
 	
+	@Autowired
 	private Tondeuse tondeuse;
 
+	public void lireInstructions(String instructions, ISurface surface){
+		for (char m : instructions.toCharArray()) {
+			Mouvement mouvement = Mouvement.getMouvement(String.valueOf(m));
+			bouger(mouvement, surface);
+		}
+	}
+	
 	public void bouger(Mouvement mouvement, ISurface surface){
 		switch (mouvement) {
 		case DROITE:

@@ -10,7 +10,8 @@ public class Engine {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		LecteurFichierAppareilService lecteurFichierAppareilService = (LecteurFichierAppareilService) context.getBean("lecteurFichierAppareilService");
-		lecteurFichierAppareilService.lire(args[0]);
+		Gestionnaire gestionnaire = (Gestionnaire)context.getBean("gestionnaire");
+		gestionnaire.gestion(args[0]);
+		gestionnaire.afficheEtatFinal();
 	}
 }

@@ -1,11 +1,14 @@
 package fr.toure.xebia.model.surface;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import fr.toure.xebia.model.commun.Coordonnees;
 
 @Component
 public class Pelouse implements ISurface{
+	
+	@Autowired
 	private Coordonnees taille;
 	
 	public Pelouse(){

@@ -3,6 +3,8 @@ package fr.toure.xebia.model.commun;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 public enum Orientation {
 	NORTH, SOUTH, EAST, WEST;
 

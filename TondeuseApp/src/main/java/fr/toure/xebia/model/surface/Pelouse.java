@@ -10,15 +10,6 @@ public class Pelouse implements ISurface{
 	
 	@Autowired
 	private Coordonnees taille;
-	
-	public Pelouse(){
-		super();
-	}
-	
-	public Pelouse(Coordonnees taille) {
-		super();
-		this.taille = taille;
-	}
 
 	public Coordonnees getTaille() {
 		return taille;
@@ -29,10 +20,10 @@ public class Pelouse implements ISurface{
 	}
 
 	public int getAbscisseMax(){
-		return taille.getX();
+		return taille.getAbscisse();
 	}
 	
 	public int getOrdonneeMax(){
-		return taille.getY();
+		return taille.getOrdonnee();
 	}
 }

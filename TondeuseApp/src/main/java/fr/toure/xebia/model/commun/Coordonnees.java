@@ -6,43 +6,34 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 public class Coordonnees {
-	private int x;
-	private int y;
+	private int abscisse;
+	private int ordonnee;
 	
-	public Coordonnees(){
-		super();
+	public int getAbscisse() {
+		return abscisse;
 	}
 	
-	public Coordonnees(int x, int y){
-		this.x = x;
-		this.y = y;
+	public void setAbscisse(int abscisse) {
+		this.abscisse = abscisse;
 	}
 	
-	public int getX() {
-		return x;
+	public int getOrdonnee() {
+		return ordonnee;
 	}
 	
-	public void setX(int x) {
-		this.x = x;
-	}
-	
-	public int getY() {
-		return y;
-	}
-	
-	public void setY(int y) {
-		this.y = y;
+	public void setOrdonnee(int ordonnee) {
+		this.ordonnee = ordonnee;
 	}
 	
 	@Override
 	public String toString() {
-		return "X - Y : " + this.x + " " + this.y;
+		return "abscisse - ordonnee : " + this.abscisse + " - " + this.ordonnee;
 	}
 	
 	@Override
 	public boolean equals(Object obj) {
 		Coordonnees coordonnees = (Coordonnees) obj;
-		if(this.x == coordonnees.getX() && this.y == coordonnees.getY())
+		if(this.abscisse == coordonnees.getAbscisse() && this.ordonnee == coordonnees.getOrdonnee())
 			return true;
 		return false;
 	}

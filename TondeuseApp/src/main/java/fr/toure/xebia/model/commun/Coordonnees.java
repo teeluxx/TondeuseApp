@@ -27,7 +27,7 @@ public class Coordonnees {
 	
 	@Override
 	public String toString() {
-		return "abscisse - ordonnee : " + this.abscisse + " - " + this.ordonnee;
+		return this.abscisse + " " + this.ordonnee;
 	}
 	
 	@Override

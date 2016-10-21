@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.toure.xebia.model.appareil.IAppareil;
+import fr.toure.xebia.model.appareil.Instructions;
 import fr.toure.xebia.model.commun.Mouvement;
 import fr.toure.xebia.model.commun.Orientation;
-import fr.toure.xebia.model.fichier.Instructions;
 import fr.toure.xebia.model.surface.ISurface;
 
 @Service
 public class TondeuseManager implements IAppareilSevice{
 
-	private Map<? extends IAppareil, Instructions> appareilsInstructions;
+	private Map<IAppareil, Instructions> appareilsInstructions;
 
 	@Autowired
 	private ISurface surface;
@@ -127,16 +127,20 @@ public class TondeuseManager implements IAppareilSevice{
 		}
 	}
 	
-	public Map<? extends IAppareil, Instructions> getAppareilsInstructions() {
+	public Map<IAppareil, Instructions> getAppareilsInstructions() {
 		return appareilsInstructions;
 	}
 
-	public void setAppareilsInstructions(Map<? extends IAppareil, Instructions> appareilsInstructions) {
+	public void setAppareilsInstructions(Map<IAppareil, Instructions> appareilsInstructions) {
 		this.appareilsInstructions = appareilsInstructions;
 	}
 
 	public void setSurface(ISurface surface){
 		this.surface = surface;
+	}
+	
+	public void setSurface(int abscisse, int ordonnee){
+		this.surface.setTaille(abscisse, ordonnee);
 	}
 
 	public ISurface getSurface(){

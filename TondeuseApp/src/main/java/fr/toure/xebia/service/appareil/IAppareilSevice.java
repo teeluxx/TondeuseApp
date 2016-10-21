@@ -3,16 +3,18 @@ package fr.toure.xebia.service.appareil;
 import java.util.Map;
 
 import fr.toure.xebia.model.appareil.IAppareil;
-import fr.toure.xebia.model.fichier.Instructions;
+import fr.toure.xebia.model.appareil.Instructions;
 import fr.toure.xebia.model.surface.ISurface;
 
 public interface IAppareilSevice {
 
-	public void setAppareilsInstructions(Map<? extends IAppareil, Instructions> appareilsInstructions);
+	public void setAppareilsInstructions(Map<IAppareil, Instructions> appareilsInstructions);
 
-	public Map<? extends IAppareil, Instructions> getAppareilsInstructions();
+	public Map<IAppareil, Instructions> getAppareilsInstructions();
 	
 	public void setSurface(ISurface surface);
+	
+	public void setSurface(int abscisse, int ordonnee);
 	
 	public ISurface getSurface();
 	

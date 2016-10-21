@@ -18,6 +18,11 @@ public class Pelouse implements ISurface{
 	public void setTaille(Coordonnees taille) {
 		this.taille = taille;
 	}
+	
+	public void setTaille(int abscisse, int ordonnee){
+		this.taille.setAbscisse(abscisse + 1);
+		this.taille.setOrdonnee(ordonnee + 1);
+	}
 
 	public int getAbscisseMax(){
 		return taille.getAbscisse();

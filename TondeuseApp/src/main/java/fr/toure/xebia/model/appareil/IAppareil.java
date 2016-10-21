@@ -12,4 +12,8 @@ public interface IAppareil {
 	public void setPositionCourante(int abscisse, int ordonnee);
 	
 	public void setOrientation(Orientation orientation);
+	
+	public boolean equals(Object obj);
+	
+	public int hashCode();
 }

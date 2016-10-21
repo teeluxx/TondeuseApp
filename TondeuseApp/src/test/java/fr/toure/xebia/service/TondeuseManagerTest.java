@@ -13,11 +13,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import fr.toure.xebia.model.appareil.IAppareil;
+import fr.toure.xebia.model.appareil.Instructions;
 import fr.toure.xebia.model.appareil.Tondeuse;
 import fr.toure.xebia.model.commun.Coordonnees;
 import fr.toure.xebia.model.commun.Mouvement;
 import fr.toure.xebia.model.commun.Orientation;
-import fr.toure.xebia.model.fichier.Instructions;
 import fr.toure.xebia.model.surface.Pelouse;
 import fr.toure.xebia.service.appareil.TondeuseManager;
 
@@ -46,7 +47,7 @@ public class TondeuseManagerTest {
 	@Autowired
 	private Coordonnees taillePelouse;
 	
-	private Map<Tondeuse, Instructions> tondeusesInstructions;
+	private Map<IAppareil, Instructions> tondeusesInstructions;
 
 	@Before
 	public void init(){
@@ -63,7 +64,7 @@ public class TondeuseManagerTest {
 		this.instructions1.setDescription("DADGGA");
 		this.instructions2.setDescription("AADDADDGA");
 		
-		this.tondeusesInstructions = new HashMap<Tondeuse, Instructions>();
+		this.tondeusesInstructions = new HashMap<IAppareil, Instructions>();
 		this.tondeusesInstructions.put(tondeuse1, instructions1);
 		this.tondeusesInstructions.put(tondeuse2, instructions2);
 		

@@ -1,4 +1,4 @@
-package fr.toure.xebia.model.fichier;
+package fr.toure.xebia.model.appareil;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

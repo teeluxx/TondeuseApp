@@ -2,14 +2,13 @@ package fr.toure.xebia.service;
 
 import static org.junit.Assert.*;
 
-import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -23,7 +22,7 @@ import fr.toure.xebia.model.surface.Pelouse;
 import fr.toure.xebia.service.appareil.TondeuseManager;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/test/ressources/spring-context.xml")
+@ContextConfiguration("file:src/test/resources/spring-context.xml")
 public class TondeuseManagerTest {
 	
 	@Autowired
@@ -64,18 +63,18 @@ public class TondeuseManagerTest {
 		this.instructions1.setDescription("DADGGA");
 		this.instructions2.setDescription("AADDADDGA");
 		
-		this.tondeusesInstructions = new HashMap<IAppareil, Instructions>();
+		this.tondeusesInstructions = new Hashtable<>();
 		this.tondeusesInstructions.put(tondeuse1, instructions1);
 		this.tondeusesInstructions.put(tondeuse2, instructions2);
 		
 		this.tondeuseManager.setAppareilsInstructions(tondeusesInstructions);
-		this.tondeuseManager.setSurface(pelouse);
+		this.tondeuseManager.setSurface(pelouse.getAbscisseMax(), pelouse.getOrdonneeMax());
 	}
 	
 	@Test
 	public void positionSuivanteCorrecteTest(){
 		assertTrue(tondeuseManager.positionSuivanteCorrecte(11, 12));
-		assertFalse(tondeuseManager.positionSuivanteCorrecte(13, 31));
+		assertFalse(tondeuseManager.positionSuivanteCorrecte(13, 32));
 	}
 	
 	@Test
@@ -126,11 +125,12 @@ public class TondeuseManagerTest {
 	
 	@Test
 	public void getAndSetSurfaceTest(){
+		assertEquals(26, tondeuseManager.getSurface().getAbscisseMax());
+		assertEquals(32, tondeuseManager.getSurface().getOrdonneeMax());
 		
-	}
-	
-	@Test
-	public void afficherTest(){
+		tondeuseManager.setSurface(11, 10);
 		
+		assertEquals(12, tondeuseManager.getSurface().getAbscisseMax());
+		assertEquals(11, tondeuseManager.getSurface().getOrdonneeMax());
 	}
 }

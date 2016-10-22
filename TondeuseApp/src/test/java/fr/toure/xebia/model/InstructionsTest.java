@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import fr.toure.xebia.model.appareil.Instructions;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/test/ressources/spring-context.xml")
+@ContextConfiguration("file:src/test/resources/spring-context.xml")
 public class InstructionsTest {
 	
 	@Autowired

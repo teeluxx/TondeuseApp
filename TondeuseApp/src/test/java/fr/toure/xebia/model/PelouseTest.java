@@ -13,7 +13,7 @@ import fr.toure.xebia.model.commun.Coordonnees;
 import fr.toure.xebia.model.surface.Pelouse;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/test/ressources/spring-context.xml")
+@ContextConfiguration("file:src/test/resources/spring-context.xml")
 public class PelouseTest {
 	
 	@Autowired

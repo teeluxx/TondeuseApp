@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import fr.toure.xebia.model.commun.Coordonnees;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/test/ressources/spring-context.xml")
+@ContextConfiguration("file:src/test/resources/spring-context.xml")
 public class CoordonneesTest {
 	@Autowired
 	private Coordonnees coordonnees1;
@@ -58,7 +58,7 @@ public class CoordonneesTest {
 	
 	@Test
 	public void toStringTest(){
-		String s = "abscisse - ordonnee : 6 - 21";
+		String s = "6 21";
 		assertEquals(s, coordonnees1.toString());
 	}
 }

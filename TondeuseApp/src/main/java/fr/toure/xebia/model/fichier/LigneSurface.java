@@ -1,14 +1,12 @@
 package fr.toure.xebia.model.fichier;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
 public class LigneSurface {
 	private int abscisse;
 
-	private int ordonnees;
+	private int ordonnee;
 
 	public int getAbscisse() {
 		return abscisse;
@@ -18,11 +16,11 @@ public class LigneSurface {
 		this.abscisse = abscisse;
 	}
 
-	public int getOrdonnees() {
-		return ordonnees;
+	public int getOrdonnee() {
+		return ordonnee;
 	}
 
-	public void setOrdonnees(int ordonnees) {
-		this.ordonnees = ordonnees;
+	public void setOrdonnee(int ordonnee) {
+		this.ordonnee = ordonnee;
 	}
 }

@@ -11,6 +11,11 @@ import fr.toure.xebia.model.commun.Mouvement;
 import fr.toure.xebia.model.commun.Orientation;
 import fr.toure.xebia.model.surface.ISurface;
 
+
+/**
+ * @author younoussatoure
+ *
+ */
 @Service
 public class TondeuseManager implements IAppareilSevice{
 
@@ -25,6 +30,11 @@ public class TondeuseManager implements IAppareilSevice{
 		}
 	}
 
+	/**
+	 * Applique les intructions a l'appareil
+	 * @param appareil sur lequel appliquer les instructions
+	 * @param instructions de l'appareil
+	 */
 	public void executerAppareilInstructions(IAppareil appareil, Instructions instructions){
 		for (char m : instructions.getDescription().toCharArray()) {
 			Mouvement mouvement = Mouvement.getMouvement(String.valueOf(m));
@@ -32,6 +42,11 @@ public class TondeuseManager implements IAppareilSevice{
 		}
 	}
 
+	/**
+	 * Deplace l'appareil selon le mouvement
+	 * @param appareil sur lequel appliquer le mouvement
+	 * @param mouvement a effectuer
+	 */
 	public void bouger(IAppareil appareil, Mouvement mouvement){
 		switch (mouvement) {
 		case DROITE:
@@ -48,6 +63,10 @@ public class TondeuseManager implements IAppareilSevice{
 		}
 	}
 
+	/**
+	 * Avance l'appareil d'une case dans le sens de son orientation
+	 * @param appareil a avancer
+	 */
 	public void avancer(IAppareil appareil) {
 		switch (appareil.getOrientation()) {
 		case NORTH:
@@ -75,6 +94,10 @@ public class TondeuseManager implements IAppareilSevice{
 		}
 	}
 
+	/**
+	 * change l'orientation de l'appareil de 90 degres vers la droite
+	 * @param appareil qui change d'orientation
+	 */
 	public void tournerADroite(IAppareil appareil){
 		switch (appareil.getOrientation()) {
 		case NORTH:
@@ -94,6 +117,10 @@ public class TondeuseManager implements IAppareilSevice{
 		}
 	}
 
+	/**
+	 * change l'orientation de l'appareil de 90 degres vers la gauche
+	 * @param appareil qui change d'orientation
+	 */
 	public void tournerAGauche(IAppareil appareil) {
 		switch (appareil.getOrientation()) {
 		case NORTH:
@@ -121,7 +148,7 @@ public class TondeuseManager implements IAppareilSevice{
 		return false;
 	}
 
-	public void afficher() {
+	public void afficherAppareilsPositions() {
 		for (IAppareil appareil : appareilsInstructions.keySet()) {
 			System.out.println(appareil);
 		}
@@ -135,10 +162,6 @@ public class TondeuseManager implements IAppareilSevice{
 		this.appareilsInstructions = appareilsInstructions;
 	}
 
-	public void setSurface(ISurface surface){
-		this.surface = surface;
-	}
-	
 	public void setSurface(int abscisse, int ordonnee){
 		this.surface.setTaille(abscisse, ordonnee);
 	}

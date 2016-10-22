@@ -13,7 +13,7 @@ import fr.toure.xebia.model.commun.Coordonnees;
 import fr.toure.xebia.model.commun.Orientation;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/test/ressources/spring-context.xml")
+@ContextConfiguration("file:src/test/resources/spring-context.xml")
 public class TondeuseTest {
 
 	@Autowired
@@ -61,7 +61,7 @@ public class TondeuseTest {
 	
 	@Test
 	public void toStringTest(){
-		String s = "abscisse - ordonnee : 6 - 21 | EAST";
+		String s = "6 21 E";
 		assertEquals(s, tondeuse.toString());
 	}
 

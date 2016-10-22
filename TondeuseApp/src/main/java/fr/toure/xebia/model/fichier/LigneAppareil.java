@@ -1,25 +1,40 @@
 package fr.toure.xebia.model.fichier;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import fr.toure.xebia.model.appareil.IAppareil;
-import fr.toure.xebia.model.commun.Orientation;
 
 @Component
 @Scope("prototype")
 public class LigneAppareil {
 
-	@Autowired
-	private IAppareil appareil;
+	private int abscisse;
 
-	public void setAppareil(int abscisse, int ordonnee, Orientation orientation){
-		this.appareil.setPositionCourante(abscisse, ordonnee);
-		this.appareil.setOrientation(orientation);
-	}
+	private int ordonnee;
 	
-	public IAppareil getAppareil(){
-		return this.appareil;
+	private String orientation;
+
+	public int getAbscisse() {
+		return abscisse;
+	}
+
+	public void setAbscisse(int abscisse) {
+		this.abscisse = abscisse;
+	}
+
+	public int getOrdonnee() {
+		return ordonnee;
+	}
+
+	public void setOrdonnee(int ordonnee) {
+		this.ordonnee = ordonnee;
+	}
+
+	public String getOrientation() {
+		return orientation;
+	}
+
+	public void setOrientation(String orientation) {
+		this.orientation = orientation;
 	}
 }

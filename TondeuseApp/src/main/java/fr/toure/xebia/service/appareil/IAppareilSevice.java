@@ -12,15 +12,25 @@ public interface IAppareilSevice {
 
 	public Map<IAppareil, Instructions> getAppareilsInstructions();
 	
-	public void setSurface(ISurface surface);
-	
 	public void setSurface(int abscisse, int ordonnee);
 	
 	public ISurface getSurface();
 	
-	public void afficher();
+	/**
+	 * affiche la position courante de tous les appareils qui se trouve dans la map appareilsInstructions
+	 */
+	public void afficherAppareilsPositions();
 
+	/**
+	 * Applique les instructions correspondant à chacun des appareils de la map appareilsInstructions
+	 */
 	public void executerAppareilsInstructions();
 
+	/**
+	 * test si la position suivante est correcte
+	 * @param abscisse de la position suivante
+	 * @param ordonnee de la position suivante
+	 * @return true si la position abscisse-ordonnee est dans la surface courante, false sinon
+	 */
 	public boolean positionSuivanteCorrecte(int abscisse, int ordonnee);
 }
